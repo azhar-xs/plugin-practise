@@ -20,7 +20,7 @@ final class xPeed_Studio{
     {
         $this->define_constants();
         register_activation_hook(__FILE__,[$this,'activate']);
-        
+
         // $this->init_plugin();
         add_action('plugins_loaded',[$this,'init_plugin']);
     }
@@ -51,11 +51,8 @@ final class xPeed_Studio{
     }
     public function activate()
     {
-        $installed = get_option('xpeed_studio_installed');
-        if(!$installed){
-            update_option('xpeed_studio_installed',time());
-        }
-        update_option('xpeed_studio_version',XPEED_STUDIO_VERSION);
+        $installer = new  Azhar\XpeedStudio\Installer();
+        $installer->run();
     }
 }
 $obj = xPeed_Studio::init();
