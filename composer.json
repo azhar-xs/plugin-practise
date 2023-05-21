@@ -1,0 +1,20 @@
+{
+    "name": "azhar/xpeed-studio",
+    "description": "plugin practise",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "Azhar\\XpeedStudio\\": "src/"
+        },
+        "files": []
+    },
+    "authors": [
+        {
+            "name": "azhar-xs",
+            "email": "azhar@xpeedstudio.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
