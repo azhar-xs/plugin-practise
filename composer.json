@@ -7,7 +7,7 @@
         "psr-4": {
             "Azhar\\XpeedStudio\\": "src/"
         },
-        "files": []
+        "files": ["src/functions.php"]
     },
     "authors": [
         {
