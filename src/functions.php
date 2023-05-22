@@ -48,11 +48,16 @@ function wp_get_address($args = [])
     $args = wp_parse_args( $args, $defaults );
     $items = $wpdb->get_results(
         $wpdb->prepare(
-            SELECT * FROM {$wpdb->prefix}xs_address
+            "SELECT * FROM {$wpdb->prefix}xs_address
             ORDER BY %s %s 
-            LIMIT %d %d,
+            LIMIT %d %d",
             $args['orderby'],$args['order'],$args['offset'],$args['number']
-        );
+        )
     );
     return $items;
+}
+function wp_count_address()
+{
+    global $wpdb;
+    return (int) $wpdb->get_var( "SELECT count(id) FROM {$wpdb->prefix}xs_address" );
 }
